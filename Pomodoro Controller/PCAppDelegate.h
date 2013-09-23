@@ -7,9 +7,58 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PCPreferenesWindowController.h"
 
-@interface PCAppDelegate : NSObject <NSApplicationDelegate>
+typedef enum {
+    IDLE,
+    POMODORO,
+    BREAK
+} PomodoroStatus;
 
-@property (assign) IBOutlet NSWindow *window;
+@interface PCAppDelegate : NSObject <NSApplicationDelegate> {
+    IBOutlet NSMenu *statusMenu;
+    NSStatusItem *statusItem;
+    
+    IBOutlet NSMenuItem *startMenuItem;
+    IBOutlet NSMenuItem *stopMenuItem;
+    
+    NSImage *statusImage;
+    NSImage *statusHighlightImage;
+    
+    NSImage *pomodoroImage;
+    NSImage *pomodoroHighlightImage;
+    
+    NSImage *pomodoroBreakImage;
+    
+    NSSound *tadaSound;
+    
+    PomodoroStatus pomodoroStatus;
+    
+    NSTimer *pomodoroTimer;
+    
+    int pomodoroCountdown;
+    
+    NSString *serverUrl;
+    NSDictionary *serverUrls;
+    
+    NSString *username;
+    
+    PCPreferenesWindowController *preferencesWindowController;
+    
+}
+
+- (void) initPomodoroStatus;
+- (void) readUserDefaults;
+
+- (IBAction)startPomodoro:(id)sender;
+- (IBAction)stopPomodoro:(id)sender;
+- (IBAction)showPreferences:(id)sender;
+
+- (IBAction)advancePomodoroTimer:(NSTimer *)timer;
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
+     shouldPresentNotification:(NSUserNotification *)notification;
+
+- (void)cancelPomodoro:(id)sender;
 
 @end

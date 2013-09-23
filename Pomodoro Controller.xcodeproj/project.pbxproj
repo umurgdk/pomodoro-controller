@@ -7,15 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492CC1A20A674F8ABAE5D5EB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 849F8E589AD643C1A9D1E43B /* libPods.a */; };
+		AF5A6EC817EA5B9E003D1CAC /* PCPreferenesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5A6EC617EA5B9E003D1CAC /* PCPreferenesWindowController.m */; };
+		AF5A6EC917EA5B9E003D1CAC /* PCPreferenesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF5A6EC717EA5B9E003D1CAC /* PCPreferenesWindowController.xib */; };
+		AF9B142317F0384800B9603B /* domates.icns in Resources */ = {isa = PBXBuildFile; fileRef = AF9B142217F0384800B9603B /* domates.icns */; };
+		AF9D2B2017E9131700912573 /* highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9D2B1F17E9131700912573 /* highlight.png */; };
+		AF9D2B2217E916E200912573 /* active_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9D2B2117E916E200912573 /* active_highlight.png */; };
 		AFACF5CF17E8E7BA009897FB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFACF5CE17E8E7BA009897FB /* Cocoa.framework */; };
 		AFACF5D917E8E7BA009897FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFACF5D717E8E7BA009897FB /* InfoPlist.strings */; };
 		AFACF5DB17E8E7BA009897FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACF5DA17E8E7BA009897FB /* main.m */; };
 		AFACF5DF17E8E7BA009897FB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AFACF5DD17E8E7BA009897FB /* Credits.rtf */; };
 		AFACF5E217E8E7BA009897FB /* PCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACF5E117E8E7BA009897FB /* PCAppDelegate.m */; };
 		AFACF5E517E8E7BA009897FB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFACF5E317E8E7BA009897FB /* MainMenu.xib */; };
+		AFACF5ED17E8F132009897FB /* active.png in Resources */ = {isa = PBXBuildFile; fileRef = AFACF5EB17E8F132009897FB /* active.png */; };
+		AFACF5EE17E8F132009897FB /* idle.png in Resources */ = {isa = PBXBuildFile; fileRef = AFACF5EC17E8F132009897FB /* idle.png */; };
+		AFEB1F1517E9BEDC00CB015F /* break.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEB1F1417E9BEDC00CB015F /* break.png */; };
+		AFEB1F1717E9C4BE00CB015F /* TaDa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AFEB1F1617E9C4BE00CB015F /* TaDa.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		849F8E589AD643C1A9D1E43B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF5A6EC517EA5B9E003D1CAC /* PCPreferenesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPreferenesWindowController.h; sourceTree = "<group>"; };
+		AF5A6EC617EA5B9E003D1CAC /* PCPreferenesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPreferenesWindowController.m; sourceTree = "<group>"; };
+		AF5A6EC717EA5B9E003D1CAC /* PCPreferenesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCPreferenesWindowController.xib; sourceTree = "<group>"; };
+		AF9B142217F0384800B9603B /* domates.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = domates.icns; sourceTree = "<group>"; };
+		AF9D2B1F17E9131700912573 /* highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highlight.png; sourceTree = "<group>"; };
+		AF9D2B2117E916E200912573 /* active_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_highlight.png; sourceTree = "<group>"; };
 		AFACF5CB17E8E7BA009897FB /* Pomodoro Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pomodoro Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFACF5CE17E8E7BA009897FB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AFACF5D117E8E7BA009897FB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -29,6 +46,11 @@
 		AFACF5E017E8E7BA009897FB /* PCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCAppDelegate.h; sourceTree = "<group>"; };
 		AFACF5E117E8E7BA009897FB /* PCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCAppDelegate.m; sourceTree = "<group>"; };
 		AFACF5E417E8E7BA009897FB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		AFACF5EB17E8F132009897FB /* active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active.png; sourceTree = "<group>"; };
+		AFACF5EC17E8F132009897FB /* idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idle.png; sourceTree = "<group>"; };
+		AFEB1F1417E9BEDC00CB015F /* break.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = break.png; sourceTree = "<group>"; };
+		AFEB1F1617E9C4BE00CB015F /* TaDa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TaDa.mp3; sourceTree = "<group>"; };
+		B35C89F763CA4A19BA7B7E9B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFACF5CF17E8E7BA009897FB /* Cocoa.framework in Frameworks */,
+				492CC1A20A674F8ABAE5D5EB /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,9 +69,14 @@
 		AFACF5C217E8E7BA009897FB = {
 			isa = PBXGroup;
 			children = (
+				AF9B142217F0384800B9603B /* domates.icns */,
+				AF5A6EC517EA5B9E003D1CAC /* PCPreferenesWindowController.h */,
+				AF5A6EC617EA5B9E003D1CAC /* PCPreferenesWindowController.m */,
+				AF5A6EC717EA5B9E003D1CAC /* PCPreferenesWindowController.xib */,
 				AFACF5D417E8E7BA009897FB /* Pomodoro Controller */,
 				AFACF5CD17E8E7BA009897FB /* Frameworks */,
 				AFACF5CC17E8E7BA009897FB /* Products */,
+				B35C89F763CA4A19BA7B7E9B /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +93,7 @@
 			children = (
 				AFACF5CE17E8E7BA009897FB /* Cocoa.framework */,
 				AFACF5D017E8E7BA009897FB /* Other Frameworks */,
+				849F8E589AD643C1A9D1E43B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,6 +114,12 @@
 				AFACF5E017E8E7BA009897FB /* PCAppDelegate.h */,
 				AFACF5E117E8E7BA009897FB /* PCAppDelegate.m */,
 				AFACF5E317E8E7BA009897FB /* MainMenu.xib */,
+				AFEB1F1617E9C4BE00CB015F /* TaDa.mp3 */,
+				AFACF5EB17E8F132009897FB /* active.png */,
+				AF9D2B2117E916E200912573 /* active_highlight.png */,
+				AFEB1F1417E9BEDC00CB015F /* break.png */,
+				AF9D2B1F17E9131700912573 /* highlight.png */,
+				AFACF5EC17E8F132009897FB /* idle.png */,
 				AFACF5D517E8E7BA009897FB /* Supporting Files */,
 			);
 			path = "Pomodoro Controller";
@@ -109,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFACF5E817E8E7BA009897FB /* Build configuration list for PBXNativeTarget "Pomodoro Controller" */;
 			buildPhases = (
+				24F61558DE7041DB97EA83D4 /* Check Pods Manifest.lock */,
 				AFACF5C717E8E7BA009897FB /* Sources */,
 				AFACF5C817E8E7BA009897FB /* Frameworks */,
 				AFACF5C917E8E7BA009897FB /* Resources */,
+				430289C3CC6340BD91272EC0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,10 +194,51 @@
 				AFACF5D917E8E7BA009897FB /* InfoPlist.strings in Resources */,
 				AFACF5DF17E8E7BA009897FB /* Credits.rtf in Resources */,
 				AFACF5E517E8E7BA009897FB /* MainMenu.xib in Resources */,
+				AFACF5ED17E8F132009897FB /* active.png in Resources */,
+				AFACF5EE17E8F132009897FB /* idle.png in Resources */,
+				AF9D2B2017E9131700912573 /* highlight.png in Resources */,
+				AF9D2B2217E916E200912573 /* active_highlight.png in Resources */,
+				AFEB1F1517E9BEDC00CB015F /* break.png in Resources */,
+				AFEB1F1717E9C4BE00CB015F /* TaDa.mp3 in Resources */,
+				AF5A6EC917EA5B9E003D1CAC /* PCPreferenesWindowController.xib in Resources */,
+				AF9B142317F0384800B9603B /* domates.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24F61558DE7041DB97EA83D4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		430289C3CC6340BD91272EC0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFACF5C717E8E7BA009897FB /* Sources */ = {
@@ -169,6 +247,7 @@
 			files = (
 				AFACF5DB17E8E7BA009897FB /* main.m in Sources */,
 				AFACF5E217E8E7BA009897FB /* PCAppDelegate.m in Sources */,
+				AF5A6EC817EA5B9E003D1CAC /* PCPreferenesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +287,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -240,7 +319,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -261,11 +340,23 @@
 		};
 		AFACF5E917E8E7BA009897FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B35C89F763CA4A19BA7B7E9B /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/Release,
+					"\"$(SRCROOT)/../LRResty/build/Release\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pomodoro Controller/Pomodoro Controller-Prefix.pch";
 				INFOPLIST_FILE = "Pomodoro Controller/Pomodoro Controller-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -273,11 +364,23 @@
 		};
 		AFACF5EA17E8E7BA009897FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B35C89F763CA4A19BA7B7E9B /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/Release,
+					"\"$(SRCROOT)/../LRResty/build/Release\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pomodoro Controller/Pomodoro Controller-Prefix.pch";
 				INFOPLIST_FILE = "Pomodoro Controller/Pomodoro Controller-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -302,6 +405,7 @@
 				AFACF5EA17E8E7BA009897FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
