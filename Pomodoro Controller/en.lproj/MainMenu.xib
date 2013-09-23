@@ -1296,6 +1296,25 @@
 			<object class="NSMenu" id="907856653">
 				<string key="NSTitle">222</string>
 				<array class="NSMutableArray" key="NSMenuItems">
+					<object class="NSMenuItem" id="996301640">
+						<reference key="NSMenu" ref="907856653"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<string key="NSTitle">Total: In sync...</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="287315977">
+						<reference key="NSMenu" ref="907856653"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="927602075">
 						<reference key="NSMenu" ref="907856653"/>
 						<string key="NSTitle">Start</string>
@@ -2083,6 +2102,14 @@
 						<reference key="destination" ref="779205706"/>
 					</object>
 					<int key="connectionID">696</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">totalMenuItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="996301640"/>
+					</object>
+					<int key="connectionID">700</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3080,6 +3107,8 @@
 							<reference ref="1039746832"/>
 							<reference ref="1003716923"/>
 							<reference ref="779205706"/>
+							<reference ref="996301640"/>
+							<reference ref="287315977"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3111,6 +3140,16 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">694</int>
 						<reference key="object" ref="779205706"/>
+						<reference key="parent" ref="907856653"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">698</int>
+						<reference key="object" ref="996301640"/>
+						<reference key="parent" ref="907856653"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">699</int>
+						<reference key="object" ref="287315977"/>
 						<reference key="parent" ref="907856653"/>
 					</object>
 				</array>
@@ -3262,6 +3301,8 @@
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="694.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="698.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="699.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3278,98 +3319,9 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">697</int>
+			<int key="maxID">700</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">PCAppDelegate</string>
-					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="advancePomodoroTimer:">NSTimer</string>
-						<string key="changeServerUrl:">id</string>
-						<string key="changeStartOnLogin:">id</string>
-						<string key="changeUsername:">id</string>
-						<string key="showPreferences:">id</string>
-						<string key="startPomodoro:">id</string>
-						<string key="stopPomodoro:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="advancePomodoroTimer:">
-							<string key="name">advancePomodoroTimer:</string>
-							<string key="candidateClassName">NSTimer</string>
-						</object>
-						<object class="IBActionInfo" key="changeServerUrl:">
-							<string key="name">changeServerUrl:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="changeStartOnLogin:">
-							<string key="name">changeStartOnLogin:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="changeUsername:">
-							<string key="name">changeUsername:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="showPreferences:">
-							<string key="name">showPreferences:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="startPomodoro:">
-							<string key="name">startPomodoro:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="stopPomodoro:">
-							<string key="name">stopPomodoro:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="preferencesServerUrl">NSTextField</string>
-						<string key="preferencesStartOnLogin">NSButton</string>
-						<string key="preferencesUsername">NSTextField</string>
-						<string key="preferencesWindow">NSWindow</string>
-						<string key="startMenuItem">NSMenuItem</string>
-						<string key="statusMenu">NSMenu</string>
-						<string key="stopMenuItem">NSMenuItem</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="preferencesServerUrl">
-							<string key="name">preferencesServerUrl</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="preferencesStartOnLogin">
-							<string key="name">preferencesStartOnLogin</string>
-							<string key="candidateClassName">NSButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="preferencesUsername">
-							<string key="name">preferencesUsername</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="preferencesWindow">
-							<string key="name">preferencesWindow</string>
-							<string key="candidateClassName">NSWindow</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="startMenuItem">
-							<string key="name">startMenuItem</string>
-							<string key="candidateClassName">NSMenuItem</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="statusMenu">
-							<string key="name">statusMenu</string>
-							<string key="candidateClassName">NSMenu</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="stopMenuItem">
-							<string key="name">stopMenuItem</string>
-							<string key="candidateClassName">NSMenuItem</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/PCAppDelegate.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

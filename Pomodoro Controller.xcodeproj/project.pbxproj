@@ -28,9 +28,9 @@
 
 /* Begin PBXFileReference section */
 		849F8E589AD643C1A9D1E43B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF5A6EC517EA5B9E003D1CAC /* PCPreferenesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPreferenesWindowController.h; sourceTree = "<group>"; };
-		AF5A6EC617EA5B9E003D1CAC /* PCPreferenesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPreferenesWindowController.m; sourceTree = "<group>"; };
-		AF5A6EC717EA5B9E003D1CAC /* PCPreferenesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCPreferenesWindowController.xib; sourceTree = "<group>"; };
+		AF5A6EC517EA5B9E003D1CAC /* PCPreferenesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCPreferenesWindowController.h; path = ../PCPreferenesWindowController.h; sourceTree = "<group>"; };
+		AF5A6EC617EA5B9E003D1CAC /* PCPreferenesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCPreferenesWindowController.m; path = ../PCPreferenesWindowController.m; sourceTree = "<group>"; };
+		AF5A6EC717EA5B9E003D1CAC /* PCPreferenesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PCPreferenesWindowController.xib; path = ../PCPreferenesWindowController.xib; sourceTree = "<group>"; };
 		AF9B142217F0384800B9603B /* domates.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = domates.icns; sourceTree = "<group>"; };
 		AF9D2B1F17E9131700912573 /* highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highlight.png; sourceTree = "<group>"; };
 		AF9D2B2117E916E200912573 /* active_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_highlight.png; sourceTree = "<group>"; };
@@ -73,9 +73,6 @@
 			children = (
 				AFF3A65917F0604F00017116 /* README.md */,
 				AF9B142217F0384800B9603B /* domates.icns */,
-				AF5A6EC517EA5B9E003D1CAC /* PCPreferenesWindowController.h */,
-				AF5A6EC617EA5B9E003D1CAC /* PCPreferenesWindowController.m */,
-				AF5A6EC717EA5B9E003D1CAC /* PCPreferenesWindowController.xib */,
 				AFACF5D417E8E7BA009897FB /* Pomodoro Controller */,
 				AFACF5CD17E8E7BA009897FB /* Frameworks */,
 				AFACF5CC17E8E7BA009897FB /* Products */,
@@ -114,6 +111,9 @@
 		AFACF5D417E8E7BA009897FB /* Pomodoro Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AF5A6EC517EA5B9E003D1CAC /* PCPreferenesWindowController.h */,
+				AF5A6EC617EA5B9E003D1CAC /* PCPreferenesWindowController.m */,
+				AF5A6EC717EA5B9E003D1CAC /* PCPreferenesWindowController.xib */,
 				AFACF5E017E8E7BA009897FB /* PCAppDelegate.h */,
 				AFACF5E117E8E7BA009897FB /* PCAppDelegate.m */,
 				AFACF5E317E8E7BA009897FB /* MainMenu.xib */,

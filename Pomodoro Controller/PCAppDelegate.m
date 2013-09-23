@@ -76,38 +76,36 @@ const int LONG_BREAK_MINUTES = 60 * 15;
     username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
     serverUrl = [[NSUserDefaults standardUserDefaults] objectForKey:@"serverUrl"];
     
-    if (!username) {
-        username = @"unentered";
-    }
-    
-    if (!serverUrl) {
-        serverUrl = @"http://localhost/";
+    if (!username || !serverUrl) {
+        isSettingsProvided = NO;
+    } else {
+        isSettingsProvided = YES;
     }
     
     if (serverUrls) {
         [serverUrls release];
     }
     
-    serverUrls = [[NSDictionary alloc] initWithObjectsAndKeys:
-                  [NSString stringWithFormat:@"%@%@?u=%@&c=start", serverUrl, API_END, username], @"start",
-                  [NSString stringWithFormat:@"%@%@?u=%@&c=break", serverUrl, API_END, username], @"break",
-                  [NSString stringWithFormat:@"%@%@?u=%@&c=cancel", serverUrl, API_END, username], @"cancel",
-                  [NSString stringWithFormat:@"%@%@?u=%@&c=stop", serverUrl, API_END, username], @"stop",
-                  [NSString stringWithFormat:@"%@%@?u=%@&c=status", serverUrl, API_END, username], @"status",
-                  [NSString stringWithFormat:@"%@%@", serverUrl, TIME_END], @"time",
-                  nil];
-    
-    if ([username isEqual:@"unentered"]) {
-        [self showPreferences:self];
+    if (isSettingsProvided) {
+        serverUrls = [[NSDictionary alloc] initWithObjectsAndKeys:
+                      [NSString stringWithFormat:@"%@%@?u=%@&c=start", serverUrl, API_END, username], @"start",
+                      [NSString stringWithFormat:@"%@%@?u=%@&c=break", serverUrl, API_END, username], @"break",
+                      [NSString stringWithFormat:@"%@%@?u=%@&c=cancel", serverUrl, API_END, username], @"cancel",
+                      [NSString stringWithFormat:@"%@%@?u=%@&c=stop", serverUrl, API_END, username], @"stop",
+                      [NSString stringWithFormat:@"%@%@?u=%@&c=status", serverUrl, API_END, username], @"status",
+                      [NSString stringWithFormat:@"%@%@", serverUrl, TIME_END], @"time",
+                      nil];
     }
     
-    [self initPomodoroStatus];
+    if (!isSettingsProvided) {
+        [self showPreferences:self];
+    } else {
+        [self initPomodoroStatus];
+    }
 }
 
-- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
-     shouldPresentNotification:(NSUserNotification *)notification
-{
-    return YES;
+- (void)updateTotalMenu {
+    [totalMenuItem setTitle:[NSString stringWithFormat:@"Total: %d", totalPomodoro]];
 }
 
 - (void)initPomodoroStatus {
@@ -115,6 +113,9 @@ const int LONG_BREAK_MINUTES = 60 * 15;
     [[LRResty client] get:serverUrls[@"status"] withBlock:^(LRRestyResponse *response) {
         [[LRResty client] get:serverUrls[@"time"] withBlock:^(LRRestyResponse *timeResponse) {
             NSDictionary *json = [[response asString] objectFromJSONString];
+            
+            totalPomodoro = [json[@"pomodoro_today"] integerValue];
+            [self updateTotalMenu];
             
             if (![json[@"error"] boolValue]) {
                 // pomodoro has already started from another environment
@@ -124,6 +125,10 @@ const int LONG_BREAK_MINUTES = 60 * 15;
                     
                     pomodoroCountdown = POMODORO_MINUTES - floor([now timeIntervalSinceDate:from]);
                     pomodoroStatus = POMODORO;
+                    
+                    if (pomodoroCountdown < 0) {
+                        pomodoroCountdown = 0;
+                    }
                     
                     [startMenuItem setEnabled:NO];
                     [stopMenuItem setEnabled:YES];
@@ -135,6 +140,7 @@ const int LONG_BREAK_MINUTES = 60 * 15;
                     
                     [statusItem setImage:pomodoroImage];
                     [statusItem setAlternateImage:pomodoroHighlightImage];
+                    
                 } else if ([json[@"status"] isEqual:@"IDLE"]) {
                     pomodoroCountdown = POMODORO_MINUTES;
                     pomodoroStatus = IDLE;
@@ -175,7 +181,45 @@ const int LONG_BREAK_MINUTES = 60 * 15;
     }];
 }
 
+- (void)showAlert
+{
+    NSAlert *msgBox = [[[NSAlert alloc] init] autorelease];
+    [msgBox setMessageText:@"You're free to pee!"];
+    
+    [msgBox addButtonWithTitle:@"Take a Break!"]; // Take break
+    [msgBox addButtonWithTitle:@"One More Pomodoro!"]; // Start another pomodoro
+    [msgBox addButtonWithTitle:@"Cancel It!"]; // Cancel pomodoro
+    
+    NSInteger val = [msgBox runModal];
+    
+    switch (val) {
+        case 1000: // Yihaa
+            [[LRResty client] get:serverUrls[@"break"] withBlock:^(LRRestyResponse *response) {
+                [self initPomodoroStatus];
+            }];
+            break;
+            
+        case 1001:
+            [self startPomodoro:self];
+            
+            totalPomodoro += 1;
+            [self updateTotalMenu];
+            break;
+            
+        case 1002:
+            [self cancelPomodoro:self];
+            break;
+            
+        default:
+            break;
+    }
+}
+
 - (IBAction)advancePomodoroTimer:(NSTimer *)timer {
+    if (!isSettingsProvided) {
+        return;
+    }
+    
     if ((pomodoroStatus == POMODORO || pomodoroStatus == BREAK) && --pomodoroCountdown >= 0) {
         long minutes = (long) pomodoroCountdown / 60;
         long seconds = (long) pomodoroCountdown % 60;
@@ -195,35 +239,7 @@ const int LONG_BREAK_MINUTES = 60 * 15;
         
         [tadaSound play];
         
-        NSAlert *msgBox = [[[NSAlert alloc] init] autorelease];
-        [msgBox setMessageText:@"You're free to pee!"];
-        
-        [msgBox addButtonWithTitle:@"Take a Break!"]; // Take break
-        [msgBox addButtonWithTitle:@"One More Pomodoro!"]; // Start another pomodoro
-        [msgBox addButtonWithTitle:@"Cancel It!"]; // Cancel pomodoro
-        
-        NSInteger val = [msgBox runModal];
-        
-        NSLog(@"%ld", val);
-        
-        switch (val) {
-            case 1000: // Yihaa
-                [[LRResty client] get:serverUrls[@"break"] withBlock:^(LRRestyResponse *response) {
-                    [self initPomodoroStatus];
-                }];
-                break;
-                
-            case 1001:
-                [self startPomodoro:self];
-                break;
-                
-            case 1002:
-                [self cancelPomodoro:self];
-                break;
-                
-            default:
-                break;
-        }
+        [self showAlert];
     } else if (pomodoroStatus == BREAK && pomodoroCountdown == -1) {
         pomodoroCountdown = POMODORO_MINUTES;
         
@@ -237,21 +253,19 @@ const int LONG_BREAK_MINUTES = 60 * 15;
         [statusItem setAlternateImage:statusHighlightImage];
         
         [tadaSound play];
-        
-        NSUserNotification *notification = [[NSUserNotification init] alloc];
-        notification.title = @"Pomodoro";
-        notification.informativeText = @"Your break time is finished!";
-        notification.soundName = NSUserNotificationDefaultSoundName;
-        
-        [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
     } else if (pomodoroCountdown % 60 == 0 && (pomodoroCountdown != POMODORO_MINUTES &&
                                                pomodoroCountdown != SHORT_BREAK_MINUTES &&
-                                               pomodoroCountdown != LONG_BREAK_MINUTES)) {
+                                               pomodoroCountdown != LONG_BREAK_MINUTES)
+               && pomodoroCountdown != 0) {
         [self initPomodoroStatus];
     }
 }
 
 - (IBAction)startPomodoro:(id)sender {
+    if (!isSettingsProvided) {
+        return;
+    }
+    
     if (pomodoroStatus != POMODORO || pomodoroStatus != BREAK) {
         [[LRResty client] get:serverUrls[@"start"] withBlock:^(LRRestyResponse *r) {
             NSDictionary *json = [[r asString] objectFromJSONString];
@@ -280,6 +294,10 @@ const int LONG_BREAK_MINUTES = 60 * 15;
 }
 
 - (IBAction)stopPomodoro:(id)sender {
+    if (!isSettingsProvided) {
+        return;
+    }
+    
     if (pomodoroStatus == POMODORO || pomodoroStatus == BREAK) {
         [[LRResty client] get:serverUrls[@"stop"] withBlock:^(LRRestyResponse *r) {
             NSDictionary *json = [[r asString] objectFromJSONString];
@@ -299,6 +317,10 @@ const int LONG_BREAK_MINUTES = 60 * 15;
 }
 
 - (void)cancelPomodoro:(id)sender {
+    if (!isSettingsProvided) {
+        return;
+    }
+    
     [[LRResty client] get:serverUrls[@"cancel"] withBlock:^(LRRestyResponse *r) {
         NSDictionary *json = [[r asString] objectFromJSONString];
         

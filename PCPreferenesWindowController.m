@@ -7,6 +7,10 @@
 //
 
 #import "PCPreferenesWindowController.h"
+#import <LRResty/LRResty.h>
+#import <JSONKit/JSONKit.h>
+
+const NSString *_API_END = @"/api.php";
 
 @interface PCPreferenesWindowController ()
 @end
@@ -33,9 +37,14 @@
 }
 
 - (IBAction)saveAndClose:(id)sender {
-    if (delegate) {
-        [delegate readUserDefaults];
-    }
+    [[LRResty client] get:[NSString stringWithFormat:@"%@%@?u=%@&c=status", [serverUrl stringValue], _API_END, [username stringValue] ] withBlock:^(LRRestyResponse *response) {
+        NSDictionary *json = [[response asString] objectFromJSONString];
+        if (![json[@"error"] boolValue]) {
+            if (delegate) {
+                [delegate readUserDefaults];
+            }
+        }
+    }];
     
     [self close];
 }

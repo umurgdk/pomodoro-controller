@@ -10,6 +10,8 @@
 
 @interface PCPreferenesWindowController : NSWindowController {
 //    id delegate;
+    IBOutlet NSTextField *username;
+    IBOutlet NSTextField *serverUrl;
 }
 
 @property id delegate;

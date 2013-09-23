@@ -21,6 +21,7 @@ typedef enum {
     
     IBOutlet NSMenuItem *startMenuItem;
     IBOutlet NSMenuItem *stopMenuItem;
+    IBOutlet NSMenuItem *totalMenuItem;
     
     NSImage *statusImage;
     NSImage *statusHighlightImage;
@@ -37,6 +38,7 @@ typedef enum {
     NSTimer *pomodoroTimer;
     
     int pomodoroCountdown;
+    long totalPomodoro;
     
     NSString *serverUrl;
     NSDictionary *serverUrls;
@@ -44,20 +46,20 @@ typedef enum {
     NSString *username;
     
     PCPreferenesWindowController *preferencesWindowController;
+    BOOL isSettingsProvided;
     
 }
 
-- (void) initPomodoroStatus;
-- (void) readUserDefaults;
+- (void)initPomodoroStatus;
+- (void)readUserDefaults;
+- (void)showAlert;
+- (void)updateTotalMenu;
 
 - (IBAction)startPomodoro:(id)sender;
 - (IBAction)stopPomodoro:(id)sender;
 - (IBAction)showPreferences:(id)sender;
 
 - (IBAction)advancePomodoroTimer:(NSTimer *)timer;
-
-- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
-     shouldPresentNotification:(NSUserNotification *)notification;
 
 - (void)cancelPomodoro:(id)sender;
 
