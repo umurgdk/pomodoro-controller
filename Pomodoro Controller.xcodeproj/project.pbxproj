@@ -10,6 +10,11 @@
 		492CC1A20A674F8ABAE5D5EB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 849F8E589AD643C1A9D1E43B /* libPods.a */; };
 		AF5A6EC817EA5B9E003D1CAC /* PCPreferenesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5A6EC617EA5B9E003D1CAC /* PCPreferenesWindowController.m */; };
 		AF5A6EC917EA5B9E003D1CAC /* PCPreferenesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF5A6EC717EA5B9E003D1CAC /* PCPreferenesWindowController.xib */; };
+		AF97D88417F07C220068A9B3 /* active_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF97D87F17F07C220068A9B3 /* active_highlight@2x.png */; };
+		AF97D88517F07C220068A9B3 /* active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF97D88017F07C220068A9B3 /* active@2x.png */; };
+		AF97D88617F07C220068A9B3 /* break@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF97D88117F07C220068A9B3 /* break@2x.png */; };
+		AF97D88717F07C220068A9B3 /* highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF97D88217F07C220068A9B3 /* highlight@2x.png */; };
+		AF97D88817F07C220068A9B3 /* idle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF97D88317F07C220068A9B3 /* idle@2x.png */; };
 		AF9B142317F0384800B9603B /* domates.icns in Resources */ = {isa = PBXBuildFile; fileRef = AF9B142217F0384800B9603B /* domates.icns */; };
 		AF9D2B2017E9131700912573 /* highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9D2B1F17E9131700912573 /* highlight.png */; };
 		AF9D2B2217E916E200912573 /* active_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9D2B2117E916E200912573 /* active_highlight.png */; };
@@ -31,6 +36,11 @@
 		AF5A6EC517EA5B9E003D1CAC /* PCPreferenesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCPreferenesWindowController.h; path = ../PCPreferenesWindowController.h; sourceTree = "<group>"; };
 		AF5A6EC617EA5B9E003D1CAC /* PCPreferenesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCPreferenesWindowController.m; path = ../PCPreferenesWindowController.m; sourceTree = "<group>"; };
 		AF5A6EC717EA5B9E003D1CAC /* PCPreferenesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PCPreferenesWindowController.xib; path = ../PCPreferenesWindowController.xib; sourceTree = "<group>"; };
+		AF97D87F17F07C220068A9B3 /* active_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_highlight@2x.png"; sourceTree = "<group>"; };
+		AF97D88017F07C220068A9B3 /* active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active@2x.png"; sourceTree = "<group>"; };
+		AF97D88117F07C220068A9B3 /* break@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "break@2x.png"; sourceTree = "<group>"; };
+		AF97D88217F07C220068A9B3 /* highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "highlight@2x.png"; sourceTree = "<group>"; };
+		AF97D88317F07C220068A9B3 /* idle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "idle@2x.png"; sourceTree = "<group>"; };
 		AF9B142217F0384800B9603B /* domates.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = domates.icns; sourceTree = "<group>"; };
 		AF9D2B1F17E9131700912573 /* highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highlight.png; sourceTree = "<group>"; };
 		AF9D2B2117E916E200912573 /* active_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_highlight.png; sourceTree = "<group>"; };
@@ -123,6 +133,11 @@
 				AFEB1F1417E9BEDC00CB015F /* break.png */,
 				AF9D2B1F17E9131700912573 /* highlight.png */,
 				AFACF5EC17E8F132009897FB /* idle.png */,
+				AF97D87F17F07C220068A9B3 /* active_highlight@2x.png */,
+				AF97D88017F07C220068A9B3 /* active@2x.png */,
+				AF97D88117F07C220068A9B3 /* break@2x.png */,
+				AF97D88217F07C220068A9B3 /* highlight@2x.png */,
+				AF97D88317F07C220068A9B3 /* idle@2x.png */,
 				AFACF5D517E8E7BA009897FB /* Supporting Files */,
 			);
 			path = "Pomodoro Controller";
@@ -206,6 +221,11 @@
 				AF5A6EC917EA5B9E003D1CAC /* PCPreferenesWindowController.xib in Resources */,
 				AF9B142317F0384800B9603B /* domates.icns in Resources */,
 				AFF3A65A17F0604F00017116 /* README.md in Resources */,
+				AF97D88417F07C220068A9B3 /* active_highlight@2x.png in Resources */,
+				AF97D88517F07C220068A9B3 /* active@2x.png in Resources */,
+				AF97D88617F07C220068A9B3 /* break@2x.png in Resources */,
+				AF97D88717F07C220068A9B3 /* highlight@2x.png in Resources */,
+				AF97D88817F07C220068A9B3 /* idle@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
