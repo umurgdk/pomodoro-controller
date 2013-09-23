@@ -23,6 +23,7 @@
 		AFACF5EE17E8F132009897FB /* idle.png in Resources */ = {isa = PBXBuildFile; fileRef = AFACF5EC17E8F132009897FB /* idle.png */; };
 		AFEB1F1517E9BEDC00CB015F /* break.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEB1F1417E9BEDC00CB015F /* break.png */; };
 		AFEB1F1717E9C4BE00CB015F /* TaDa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AFEB1F1617E9C4BE00CB015F /* TaDa.mp3 */; };
+		AFF3A65A17F0604F00017116 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFF3A65917F0604F00017116 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		AFACF5EC17E8F132009897FB /* idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idle.png; sourceTree = "<group>"; };
 		AFEB1F1417E9BEDC00CB015F /* break.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = break.png; sourceTree = "<group>"; };
 		AFEB1F1617E9C4BE00CB015F /* TaDa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TaDa.mp3; sourceTree = "<group>"; };
+		AFF3A65917F0604F00017116 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		B35C89F763CA4A19BA7B7E9B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 		AFACF5C217E8E7BA009897FB = {
 			isa = PBXGroup;
 			children = (
+				AFF3A65917F0604F00017116 /* README.md */,
 				AF9B142217F0384800B9603B /* domates.icns */,
 				AF5A6EC517EA5B9E003D1CAC /* PCPreferenesWindowController.h */,
 				AF5A6EC617EA5B9E003D1CAC /* PCPreferenesWindowController.m */,
@@ -202,6 +205,7 @@
 				AFEB1F1717E9C4BE00CB015F /* TaDa.mp3 in Resources */,
 				AF5A6EC917EA5B9E003D1CAC /* PCPreferenesWindowController.xib in Resources */,
 				AF9B142317F0384800B9603B /* domates.icns in Resources */,
+				AFF3A65A17F0604F00017116 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
