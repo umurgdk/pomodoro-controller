@@ -43,16 +43,16 @@ const int LONG_BREAK_MINUTES = 60 * 15;
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
     
     NSBundle *bundle = [NSBundle mainBundle];
+
+    statusImage = [NSImage imageNamed:@"idle"];
+    statusHighlightImage = [NSImage imageNamed:@"highlight"];
     
-    statusImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"idle" ofType:@"png"]];
-    statusHighlightImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"highlight" ofType:@"png"]];
+    pomodoroImage = [NSImage imageNamed:@"active"];
+    pomodoroHighlightImage = [NSImage imageNamed:@"active_highlight"];
     
-    pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"active" ofType:@"png"]];
-    pomodoroHighlightImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"active_highlight" ofType:@"png"]];
+    pomodoroBreakImage = [NSImage imageNamed:@"break"];
     
-    pomodoroBreakImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"break" ofType:@"png"]];
-    
-    tadaSound = [[NSSound alloc] initWithContentsOfFile:[bundle pathForResource:@"TaDa" ofType:@"mp3"] byReference:NO];
+    tadaSound = [NSSound soundNamed:@"Tada"];
     
     [statusItem setImage:statusImage];
     [statusItem setAlternateImage:statusHighlightImage];
